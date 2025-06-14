@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> About AI</title>
+    <link rel="stylesheet" href="/CSS/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="/CSS/aiR.css">
+</head>
+<body>
+    
+    <header style="background-color:dimgray">
+        <!--==Navigation================================-->
+        <nav class="navigation" >
+      
+          <!--logo-------->
+          <a href="#" class="logo" style="color: white;" >
+            <img src="/image/GroceryGo.jpg" width="80" height="80">
+          <span>G</span>GO
+          </a>
+      
+          <!--menu-------->
+          <ul class="menu" >
+      
+            <li>
+              <a href="home.html"  >
+                Home
+              </a>
+            </li>
+      
+            <li>
+      
+              <a href="product.html" >
+      
+                Product
+      
+              </a>
+      
+            </li>
+      
+            <li>
+      
+              <a href="Research.html" class="active">
+      
+                Research
+      
+              </a>
+      
+            </li>
+      
+            <li>
+      
+              <a href="contact.html">
+      
+                Contact Us
+      
+              </a>
+      
+            </li>
+      
+            <li>
+      
+              <a href="blog.html">
+      
+                Blog
+      
+              </a>
+      
+            </li>
+      
+            <li>
+      
+              <a href="About.html" >
+      
+                About us
+      
+              </a>
+      
+            </li>
+            
+      
+            <!--right-nav-(cart-like)-->
+            <div class="right-nav">
+      
+              <div class="icons">
+      
+                <div class="fa fa-shopping-cart" id="cart-btn">
+                </div>
+              </div>
+
+              <a href="login.html">
+                <button class="login-btn">Login</button>
+            </a>
+
+            </ul>
+            </header>
+            
+  <!--Research section-->
+  <section id="research">
+    <!--heading-->
+    <div class="research-heading">
+      <span>Research through AI's</span>
+      <h3> Artificial Intellegence</h3>
+    </div>
+     <!--research content-->
+     <div class="research-container">
+       <!--box1-->
+       <div class="research-box">
+         <!--img-->
+
+       </div>
+     </div>
+
+     <div class="slider">
+      <div id="img">
+       <img src="/image/ai.jpg" >
+      </div>
+     </div> 
+
+     <div class="writing">
+        <h2>Usage of AI (Artificial Intellegence) in todays time:</h2>
+        In recent years, the integration of Artificial Intelligence (AI) into website development has revolutionized the digital landscape, offering a myriad of possibilities to enhance user experiences and streamline development processes. From personalized content delivery to intelligent chatbots, AI-driven solutions are reshaping the way websites are designed, built, and managed. Let's delve deeper into the multifaceted applications of AI in website development and explore the transformative impact it brings to the digital realm.
+         Here's an overview on few topics of how AI is utilized in website development:<br>
+
+<br><h3>Chatbots and Virtual Assistants:</h3>
+
+<br>AI-powered chatbots and virtual assistants provide real-time support to website visitors, answering questions, assisting with navigation, and even completing tasks like bookings or purchases.
+Natural Language Processing (NLP) enables chatbots to understand and respond to user inquiries, improving customer engagement and satisfaction.
+<br><h3>Personalization:</h3>
+
+<br>AI algorithms analyze user behavior, preferences, and historical data to deliver personalized content and recommendations tailored to each visitor.
+Personalization enhances user engagement, increases conversion rates, and fosters customer loyalty by delivering relevant and timely content.
+<br><h3>Content Generation:</h3>
+
+<br>AI tools can generate content automatically, including articles, product descriptions, and social media posts, based on predefined criteria and data inputs.
+Content generation AI streamlines the content creation process, saves time for website owners, and ensures consistent quality across various channels.
+<br><h3>Design Assistance:</h3>
+
+<br>AI-driven design tools assist developers and designers in creating website layouts, suggesting color schemes, fonts, and visual elements based on user preferences and design trends.
+These tools automate repetitive design tasks, provide inspiration, and help maintain design consistency throughout the website.
+
+     </div>
+     
+</section>
+
+
+
+
+            
+<!--==Footer=============================================-->
+<footer>
+    <div class="footer-container">
+      <!--logo-container------>
+      <div class="footer-logo">
+        <a href="home.html"><span>G</span>GO</a>
+
+      </div>
+      <!--links------------------------->
+      <div class="footer-links">
+        <strong>Product</strong>
+        <ul>
+          <li><a href="#">Fruits</a></li>
+          <li><a href="#">Vegetables</a></li>
+          <li><a href="#">Dairy Products</a></li>
+          <li><a href="#">Drinks</a></li>
+
+        </ul>
+      </div>
+      <!--links------------------------->
+      <div class="footer-links">
+        <strong>Category</strong>
+        <ul>
+          
+          <li><a href="FruitsOnly.html"> Fruits </a></li>
+
+          <li><a href="VegetablesOnly.html">Vegetables</a></li>
+
+          <li><a href="DairyProductonly.html">Dairy Products</a></li>
+
+          <li><a href="DrinksOnly.html"> Drinks </a></li>
+
+          <li><a href="Snacksonly.html"> Snacks </a></li>
+
+
+
+
+          
+        </ul>
+      </div>
+      <!--links-------------------------->
+      <div class="footer-links">
+        <strong>Contact</strong>
+        <ul>
+          <li><a href="#">Phone : +9787654321</a></li>
+          <li><a href="#">Email : groceryGo69@gmail.com</a></li>
+          <li><a href="#">Cities we serve</a></li>
+        </ul>
+        <br>
+        <p style="color: aliceblue;">Copyright ©2024 | GroceryGO</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    var images= ['/image/ai.jpg','/image/ai2.jpg','/image/ai3.jpg' ];
+    var x=0;
+    var imgs = document.getElementById('img');
+    setInterval(slider , 1000 );
+    function slider()
+    {
+                if ( x < images.length)
+                {
+                    x = x + 1;
+                }
+                else
+                {
+                 x = 1;
+                }
+                imgs.innerHTML = "<img src=" + images[x - 1] + ">";
+            }
+         </script>
+
+</body>
+</html>

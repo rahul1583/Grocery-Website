@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>feedback</title>
+    <link rel="stylesheet" href="/CSS/feedback.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="/CSS/home.css">
+</head>
+<body>
+
+    <header style="background-color:dimgray">
+        <!--==Navigation================================-->
+        <nav class="navigation" >
+      
+          <!--logo-------->
+          <a href="#" class="logo" style="color: white;" >
+            <img src="/image/GroceryGo.jpg" width="80" height="80">
+          <span>G</span>GO
+          </a>
+      
+          <!--menu-------->
+          <ul class="menu" >
+      
+            <li>
+              <a href="home.html"  >
+                Home
+              </a>
+            </li>
+      
+            <li>
+      
+              <a href="product.html" >
+      
+                Product
+      
+              </a>
+      
+            </li>
+      
+            <li>
+      
+              <a href="Research.html">
+      
+                Research
+      
+              </a>
+      
+            </li>
+      
+            <li>
+      
+              <a href="contact.html">
+      
+                Contact Us
+      
+              </a>
+      
+            </li>
+      
+            <li>
+      
+              <a href="blog.html">
+      
+                Blog
+      
+              </a>
+      
+            </li>
+      
+            <li>
+      
+              <a href="About.html" class="active">
+      
+                About us
+      
+              </a>
+      
+            </li>
+            
+      
+            <!--right-nav-(cart-like)-->
+            <div class="right-nav">
+      
+              <div class="icons">
+      
+                <div class="fa fa-shopping-cart" id="cart-btn">
+                </div>
+              </div>
+
+              <a href="login.html">
+                <button class="login-btn">Login</button>
+            </a>
+
+            </ul>
+            </header>
+
+    <!-------contain section------->      
+    <section class="contain" id="contain">
+        <!-------Frist Name, Last Name, Contact Number with their input type------->
+    <form name="messageForm" onsubmit="validateForm()">
+        <label>First Name:</label><input type="text" name="fname">
+        <label>Last Name:</label><input type="text" name="lname">
+        <label>Contact Number:</label><input type="text" name="contact">
+        <label>Email:</label><input type="text" name="email">
+        <!----gender and message section----->
+        <label>Gender:</label><br>
+        <input type="radio" name="genderDetails" value="male" >Male
+        <input type="radio" name="genderDetails" value="female">Female<br><br>
+        
+        <label>Message:</label><br>
+        <textarea cols="25" rows="10" name="Message" placeholder="Enter your Message"></textarea><br><br>
+        <!----------sumbit button--------->
+        <input type="submit" value="Submit Button">
+    </form>
+</section>
+<!----contain section end------->
+
+<!-- JavaScript -->
+<script type="text/javascript">
+    function validateForm() {
+        var firstName = document.forms["messageForm"]["fname"].value;
+        var lastName = document.forms["messageForm"]["lname"].value;
+        var contact = document.forms["messageForm"]["contact"].value;
+        var email = document.forms["messageForm"]["email"].value;
+        var gender = document.forms["messageForm"]["genderDetails"].value;
+        var messageDetails = document.forms["messageForm"]["Message"].value;
+
+        if (firstName == "" || lastName == "" || contact == "" || email == "" || messageDetails == "") {
+            alert("Empty fields are present!!! Please enter all values.");
+            return false;
+        } else if (!(/^\d{10}$/.test(contact))) {
+            alert("Please enter a 10-digit contact number.");
+            return false;
+        } else {
+            alert("Thank you for your feedback and have a good day!");
+            return true;
+        }
+    }
+</script>
+<!----javascript end----->
+
+
+<!--==Footer=============================================-->
+<footer>
+    <div class="footer-container">
+      <!--logo-container------>
+      <div class="footer-logo">
+        <a href="home.html"><span>G</span>GO</a>
+
+      </div>
+      <!--links------------------------->
+      <div class="footer-links">
+        <strong>Product</strong>
+        <ul>
+          <li><a href="#">Fruits</a></li>
+          <li><a href="#">Vegetables</a></li>
+          <li><a href="#">Dairy Products</a></li>
+          <li><a href="#">Drinks</a></li>
+
+        </ul>
+      </div>
+      <!--links------------------------->
+      <div class="footer-links">
+        <strong>Category</strong>
+        <ul>
+          
+          <li><a href="FruitsOnly.html"> Fruits </a></li>
+
+          <li><a href="VegetablesOnly.html">Vegetables</a></li>
+
+          <li><a href="DairyProductonly.html">Dairy Products</a></li>
+
+          <li><a href="DrinksOnly.html"> Drinks </a></li>
+
+          <li><a href="Snacksonly.html"> Snacks </a></li>
+
+
+          
+        </ul>
+      </div>
+      <!--links-------------------------->
+      <div class="footer-links">
+        <strong>Contact</strong>
+        <ul>
+          <li><a href="#">Phone : +9787654321</a></li>
+          <li><a href="#">Email : groceryGo69@gmail.com</a></li>
+          <li><a href="#">Cities we serve</a></li>
+        </ul>
+        <br>
+        <p style="color: aliceblue;">Copyright ©2024 | GroceryGO</p>
+      </div>
+    </div>
+  </footer>
+    
+</body>
+</html>

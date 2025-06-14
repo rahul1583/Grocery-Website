@@ -1,0 +1,31 @@
+
+
+h2{
+    text-align: center;
+    color: rgb(214, 46, 85);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.image{
+    text-align: center;
+}
+
+span{
+text-decoration: solid;
+color: rgb(77, 109, 225);
+font-weight: bold;
+}
+
+.box{
+    margin-bottom: 50px;
+    margin-left: 20px;
+}
+
+h5{
+
+    margin-top:50px ;
+    font-size: 18px;
+    margin-left: 20px;
+}
+

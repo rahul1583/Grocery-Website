@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grocery Store</title>
+  <link rel="stylesheet" href="/CSS/Product.css">
+  <link rel="stylesheet" href="/CSS/home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<body>
+
+  <header style="background-color:dimgray">
+    <!-- Navigation -->
+    <nav class="navigation">
+      <a href="#" class="logo" style="color: white;">
+        <img src="/image/GroceryGo.jpg" width="80" height="80">
+        <span>G</span>GO
+      </a>
+      <ul class="menu">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="product.html" class="active">Product</a></li>
+        <li><a href="Research.html">Research</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="About.html">About us</a></li>
+        <div id="cart-count">0</div>
+        <div class="right-nav">
+          <div class="icons">
+            <div class="fa fa-shopping-cart" id="cart-btn" onclick="toggleSidebar()"></div>
+          </div>
+          <a href="login.html"><button class="login-btn">Login</button></a>
+        </div>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Product sections -->
+  <h1>Fruits</h1>
+  <div class="container">
+    <div id="fruits-product-container" class="grid"></div>
+    <a href="FruitsOnly.html"><p>See More...</p></a>
+  </div>
+
+  <h1>Drinks</h1>
+  <div class="container">
+    <div id="drinks-product-container" class="grid"></div>
+    <br>
+    <a href="DrinksOnly.html"><p>See More...</p></a>
+  </div>
+
+  <h1>Vegetables</h1>
+  <div class="container">
+    <div id="vegetable-product-container" class="grid"></div>
+    <br>
+    <a href="VegetablesOnly.html"><p>See More...</p></a>
+  </div>
+
+  <h1>Dairy products</h1>
+  <div class="container">
+    <div id="dairy-product-container" class="grid"></div>
+    <br>
+    <a href="DairyProductonly.html"><p>See More...</p></a>
+  </div>
+
+  <h1>Snacks</h1>
+  <div class="container">
+    <div id="snacks-product-container" class="grid"></div>
+    <a href="Pringles.html"><p>See More...</p></a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <a href="home.html"><span>G</span>GO</a>
+      </div>
+      <div class="footer-links">
+        <strong>Product</strong>
+        <ul>
+          <li><a href="#">Fruits</a></li>
+          <li><a href="#">Vegetables</a></li>
+          <li><a href="#">Dairy Products</a></li>
+          <li><a href="#">Drinks</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <strong>Category</strong>
+        <ul>
+          <li><a href="FruitsOnly.html">Fruits</a></li>
+          <li><a href="VegetablesOnly.html">Vegetables</a></li>
+          <li><a href="DairyProductonly.html">Dairy Products</a></li>
+          <li><a href="DrinksOnly.html">Drinks</a></li>
+          <li><a href="Snacksonly.html">Snacks</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <strong>Contact</strong>
+        <ul>
+          <li><a href="#">Phone : +9787654321</a></li>
+          <li><a href="#">Email : groceryGo69@gmail.com</a></li>
+          <li><a href="#">Cities we serve</a></li>
+        </ul>
+        <br>
+        <p style="color: aliceblue;">Copyright ©2024 | GroceryGO</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sidebar -->
+  <div id="sidebar">
+    <span class="close-btn" onclick="toggleSidebar()">X</span>
+    <h2>My Cart</h2>
+    <ul id="cart-items">
+      <!-- Cart items will be displayed here -->
+    </ul>
+    <p id="total-price"></p>
+    <button onclick="buyItems()">Buy</button>
+    <p id="buy-message"></p>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Array of product data
+    const vegetableProducts = [
+      { name: "Cabbage", 
+        oldPrice: "45 p/kg",
+        newPrice: "40 p/kg",
+        imageUrl: "/image/Cabbage.jpeg" 
+      },
+      { name: "Carrot", 
+        oldPrice:"80 p/kg" , 
+        newPrice: "70 p/kg", 
+        imageUrl: "/image/Carrot.jpg" 
+      },
+      { name: "Onion", 
+        oldPrice: "80 p/kg", 
+        newPrice: "60 p/kg", 
+        imageUrl: "/image/Onion.jpg" 
+      }
+    ];
+
+    const dairyProduct = [
+      { name: "Icecream", 
+        imageUrl: "/image/Icecream.jpg", 
+        newPrice: 70 
+      },
+      { name: "Butter", 
+        imageUrl: "/image/Butter.webp", 
+        oldPrice: 350, 
+        newPrice: 340 
+      },
+      { name: "Cheese", 
+       imageUrl: "/image/cheese.webp", 
+       oldPrice: 150, 
+       newPrice: 135}
+    ];
+
+    const snacksProduct = [
+      { name: "Pringles", 
+        imageUrl: "/image/Pringles.jpg", 
+        oldPrice: 275, 
+        newPrice: 270 },
+      { name: "Lays", 
+        imageUrl: "/image/Lays.jpg", 
+        oldPrice: 350, 
+        newPrice: 340 
+      },
+      { name: "Kitkat", 
+        imageUrl: "/image/Kitkat.jpg", 
+        oldPrice: 60, 
+        newPrice: 55
+      }
+    ];
+
+    const drinksData = [
+      { name: "Cocacola", 
+        imageUrl: "/image/cocacola.jpg", 
+        oldPrice: 270, 
+        newPrice: 260 
+      },
+      { name: "Pepsi", 
+        imageUrl: "/image/pepsi.webp", 
+        oldPrice: 270, 
+        newPrice: 260
+      },
+      { name: "Sprite", 
+       imageUrl: "/image/Sprite.jpg", 
+       oldPrice: 270, 
+       newPrice: 260
+      }
+    ];
+
+    const fruitsData = [
+      { name: "Apple", 
+        imageUrl: "/image/Apple.webp", 
+        oldPrice: "340 p/kg", 
+        newPrice: "320 p/kg"
+      },
+      { name: "Banana", 
+        imageUrl: "/image/Banana.jpg", 
+        oldPrice:" 145 p/Dozen", 
+        newPrice:"130 p/dozen"
+      },
+      { name: "Grapes", 
+      imageUrl: "/image/grapes.webp", 
+      oldPrice:" 300 p/kg", 
+      newPrice: "280 p/kg" 
+    }
+    ];
+
+    // Function to display products on the webpage
+    function displayProducts(idSelector, productsArray) {
+      const productContainer = document.getElementById(idSelector);
+      let productHTML = '';
+
+      // Loop through products array
+      productsArray.forEach(product => {
+        productHTML += `
+                    <div class="product-card">
+                        <img src="${product.imageUrl}" alt="${product.name}" class="product-image">
+                        <div class="product-details">
+                            <div class="product-name">${product.name}</div>
+                            <div class="old-price">Rs. ${product.oldPrice}</div>
+                            <div class="new-price">Rs. ${product.newPrice}</div>
+                            <button class="shop-button" onclick="addToCart('${product.name}', '${product.newPrice}')">Add to Cart</button>
+                        </div>
+                    </div>
+                `;
+      });
+
+      // Set innerHTML of container to productHTML
+      productContainer.innerHTML = productHTML;
+    }
+
+    // Example usage
+    displayProducts('vegetable-product-container', vegetableProducts);
+    displayProducts('drinks-product-container', drinksData);
+    displayProducts('fruits-product-container', fruitsData);
+    displayProducts('snacks-product-container', snacksProduct);
+    displayProducts('dairy-product-container', dairyProduct);
+
+    // Function to add product to cart
+    function addToCart(productName, price) {
+      let cartCountElement = document.getElementById('cart-count');
+      let currentCount = parseInt(cartCountElement.textContent);
+      cartCountElement.textContent = currentCount + 1;
+
+      // Add product to cart data (for demonstration purposes, you might want to store this in local storage or a database)
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push({ name: productName, price: parseFloat(price) }); // Convert price to float
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+    // Function to toggle sidebar
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('open');
+    }
+
+    // Function to display cart items
+    function displayCartItems() {
+      const cartItemsElement = document.getElementById('cart-items');
+      let cartItemsHTML = '';
+
+      // Retrieve cart data from local storage
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      // Loop through cart items
+      cart.forEach((item, index) => {
+        cartItemsHTML += `
+                    <li>
+                        ${item.name} - Rs ${item.price} P/kg
+                        <button onclick="removeCartItem(${index})">Remove</button>
+                    </li>`;
+      });
+
+      // Set innerHTML of cart items element
+      cartItemsElement.innerHTML = cartItemsHTML;
+
+      // Calculate total price
+      const totalPrice = cart.reduce((acc, item) => acc + item.price, 0);
+
+      // Display total price
+      document.getElementById('total-price').textContent = `Total: Rs ${totalPrice}`;
+    }
+
+    // Function to remove a cart item
+    function removeCartItem(index) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      // Remove the item from the cart array
+      cart.splice(index, 1);
+
+      // Update the cart data in local storage
+      localStorage.setItem('cart', JSON.stringify(cart));
+
+      // Display updated cart items
+      displayCartItems();
+    }
+
+    // Function to buy items
+    function buyItems() {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      // Calculate total price
+      const totalPrice = cart.reduce((acc, item) => acc + item.price, 0);
+
+      // Display buy message
+      document.getElementById('buy-message').textContent = `Thank you for your purchase! Have a good day! Total amount: Rs ${totalPrice}.`;
+
+      // Clear the cart
+      localStorage.removeItem('cart');
+
+      // Display updated cart items
+      displayCartItems();
+    }
+
+    // Call function to display cart items
+    displayCartItems();
+  </script>
+</body>
+
+</html>

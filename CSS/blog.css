@@ -1,0 +1,136 @@
+/* General Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: rgb(254, 245, 249);
+    margin: 0;
+    padding: 20px;
+    
+    background-image: url(/image/blogbackground.jpg);
+}
+
+/* Header Styles */
+h1 {
+    text-align: center;
+    color: rgb(255, 127, 127);
+}
+
+/* Global Box Styling */
+.box {
+    background: #fff;
+    border-radius: 8px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 80%;
+    max-width: 960px;
+    text-align: center;
+}
+
+/* Image Styles */
+.box img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* Section Heading Styles */
+h2, h3, h4, h5 {
+    color: #d35400;
+}
+
+/* Content Styles */
+.content p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+/* Strong element in content */
+.content strong {
+    color: #123456;
+}
+.article-technology {
+    flex: auto;
+}
+
+
+.article-technology {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+   width: 2000px;
+   margin-left: -300px;
+   
+}
+
+/* Button Styling */
+.btn button {
+    background-color: rgb(158, 138, 236);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.btn button:hover {
+    background-color: rgb(192, 57, 43);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .box {
+        width: 95%;
+        padding: 10px;
+    }
+}
+
+
+/* -------------------------------------------------------------------- */
+
+/* Technology Article Styling */
+
+.article-technology {
+    display: flex; /* Uses flexbox to layout child elements */
+    flex-direction: column; /* Stacks child elements vertically */
+    align-items: center; /* Centers child elements horizontally */
+    background-color: #fff; /* Sets background color to white */
+    margin: 0 auto; /* Centers the article horizontally on the page */
+    padding: 20px; /* Adds padding around the content for spacing */
+    border-radius: 8px; /* Adds rounded corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Adds a subtle shadow for depth */
+    width: auto; /* Width adjusts to content */
+    max-width: 960px; /* Maximum width to maintain layout consistency */
+}
+
+
+.article-technology img {
+    width: 100%; /* Full width of the container */
+    max-width: 500px; /* Maximum width to maintain image presentation */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Space below image */
+}
+
+.article-technology .content {
+    text-align: center; /* Align text to the left within the content block */
+    width: 100%; /* Use the full width for text content */
+    max-width: 800px; /* Max width to keep the text readable */
+}
+
+/* Adjust heading size within article */
+.article-technology h2 {
+    font-size: 22px; /* Slightly smaller font size than default */
+    color: #d35400; /* Maintain the orange color theme for headings */
+}
+
+@media (max-width: 768px) {
+    .article-technology h2 {
+        font-size: 18px; /* Reduce heading size on small screens for better fit */
+    }
+
+    .article-technology .content {
+        padding: 0 15px; /* Add padding to content for better spacing on small screens */
+    }
+}
